@@ -1,0 +1,190 @@
+body {
+    font-family: 'Montserrat', sans-serif; /* Changed font */
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+nav {
+    background-color: #FDE5D4;
+    padding: 10px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure nav stays on top of other content */
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: color 0.3s; /* Add transition for color */
+    position: relative; /* Add position relative */
+}
+
+nav ul li:hover {
+    color: #fff; /* Change text color on hover */
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    background-color: transparent;
+    width: 0;
+    transition: width 0.3s, background-color 0.3s, left 0.3s; /* Add transition for width, background-color, and left */
+}
+
+nav ul li:hover::after {
+    width: 100%;
+    background-color: #fff; /* Change line color on hover */
+    left: 0;
+}
+
+nav ul li input {
+    font-size: 0.9rem;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+.search-box {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    font-size: 0.9rem;
+    padding: 8px 20px; /* Adjust padding */
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff; /* Add background color */
+}
+
+    main {
+        padding-top: 80px; /* Adjust main content padding to account for fixed navbar */
+    }
+
+
+#featured-movies {
+    text-align: center;
+}
+
+#featured-movies h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Existing CSS styles */
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.movie-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: calc(16.666% - 20px); /* Adjusted width for six cards per line */
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+position: relative;
+
+}
+
+/* Existing CSS styles */
+
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    transition:  0.3s;
+    position: inherit;
+    pointer-events: none;
+}
+
+.movie-card .info {
+    padding: 10px;
+}
+
+.movie-card .info h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.rating {
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .movie-card {
+        width: calc(33.333% - 20px); /* Adjusted width for three cards per line on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .movie-card {
+        width: calc(50% - 20px); /* Adjusted width for two cards per line on tablets and smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card {
+        width: calc(50% - 20px); /* Adjusted width for two cards per line on mobile devices */
+    }
+}
